@@ -7,4 +7,5 @@ project(money_insight)
 # Create the executable
 add_executable(${PROJECT_NAME}
         main.cpp
-        main.cpp)
+        api/transaction.cpp
+        api/transaction.h)
