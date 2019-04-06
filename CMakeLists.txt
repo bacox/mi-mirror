@@ -27,6 +27,14 @@ include_directories(${GTEST_INCLUDE_DIRS})
             api/Transaction.h api/TransactionBook.cpp api/TransactionBook.h)
 #target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 add_subdirectory(test)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+
+find_package (SQLite3 REQUIRED)
+if (SQLITE3_FOUND)
+    include_directories(${SQLITE3_INCLUDE_DIRS})
+    target_link_libraries (${PROJECT_NAME} ${SQLITE3_LIBRARIES})
+endif (SQLITE3_FOUND)
 
 #endif()
 
