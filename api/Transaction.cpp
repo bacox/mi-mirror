@@ -24,3 +24,7 @@ std::ostream &operator<<(std::ostream &os, const Transaction &transaction1) {
        << transaction1.transactionCode;
     return os;
 }
+
+int Transaction::getIndex() const {
+    return index;
+}

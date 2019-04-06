@@ -1,13 +1,32 @@
 set(CMAKE_CXX_STANDARD 11)
 cmake_minimum_required(VERSION 3.5.1)
+
+# Options. Turn on with 'cmake -Dmyvarname=ON'.
+#option(test "Build all test." OFF) # Makes boolean 'test' available.
 project(money_insight)
 
+set(CMAKE_CXX_FLAGS "-g -Wall")
 
-#-lboost_system
+# Locate GTest
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
 
 
-# Create the executable
-add_executable(${PROJECT_NAME}
-        main.cpp
-        api/Transaction.cpp
-        api/Transaction.h)
+
+################################
+# Testing
+################################
+#MESSAGE(STATUS "${test}")
+#if (test)
+#    add_executable(${PROJECT_NAME} test.cpp)
+#else()
+    # Create the executable
+    add_executable(${PROJECT_NAME}
+            main.cpp
+            api/Transaction.cpp
+            api/Transaction.h api/TransactionBook.cpp api/TransactionBook.h)
+#target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
+add_subdirectory(test)
+
+#endif()
+

@@ -28,6 +28,8 @@ public:
                 int processDate, const std::string &description, const std::string &transactionCode);
 
     friend std::ostream &operator<<(std::ostream &os, const Transaction &transaction1);
+
+    int getIndex() const;
 };
 
 
