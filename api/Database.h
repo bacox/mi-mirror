@@ -10,6 +10,7 @@
 #include <string>
 #include "Transaction.h"
 
+
 class Database {
 private:
     sqlite3 * db;
@@ -32,6 +33,8 @@ public:
     bool updateTransaction(Transaction t);
     bool deleteTransaction(Transaction t);
 
+    bool rowExists(std::string tableName, int id);
+
     int numberOfTransaction();
 
     int tableSize(std::string tableName);
@@ -46,10 +49,11 @@ public:
 
     bool tableIsEmpty(std::string tableName);
 
+    bool createTransactionTable();
+    static const std::string TABLE_TRANSACTION;
 private:
     bool fileExists(std::string pathToFile);
 
 };
-
 
 #endif //MONEY_INSIGHT_DATABASE_H

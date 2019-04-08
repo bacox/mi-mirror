@@ -32,12 +32,13 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/db)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 add_subdirectory(test)
 
-#FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
+FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
 find_package (SQLite3 REQUIRED)
 if (SQLITE3_FOUND)
     include_directories(${SQLITE3_INCLUDE_DIRS})
     target_link_libraries (${PROJECT_NAME} ${SQLITE3_LIBRARIES})
 endif (SQLITE3_FOUND)
+
 target_link_libraries(${PROJECT_NAME}
         ${Boost_FILESYSTEM_LIBRARY}
         ${Boost_SYSTEM_LIBRARY})

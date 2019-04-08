@@ -34,7 +34,7 @@ add_executable(${PROJECT_NAME} RunAllTests.cpp ${SRC_FILES} TestTransactionBook.
 #        main.cpp
 #        api/Transaction.cpp
 #        api/Transaction.h api/TransactionBook.cpp api/TransactionBook.h whattotest.cpp)
-
+FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
 find_package (SQLite3 REQUIRED)
 if (SQLITE3_FOUND)
     include_directories(${SQLITE3_INCLUDE_DIRS})
