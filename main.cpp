@@ -56,7 +56,8 @@ int main(int argc, char *argv[])
     std::cout << "Starting webserver on port 8080" << std::endl;
     MyController myController;
     Server server(8080);
-    server.registerController(&myController);
+//    server.registerController(&myController);
+    server.setOption("enable_directory_listing", "true");
 
     server.start();
 

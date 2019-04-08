@@ -12,6 +12,12 @@ set(CMAKE_CXX_FLAGS "-g -Wall")
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
+execute_process (
+        COMMAND bash -c "rm -rf ${CMAKE_BINARY_DIR}/www"
+        OUTPUT_VARIABLE outVar
+)
+
+file(COPY www DESTINATION .)
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/db)
 
 
