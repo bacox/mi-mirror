@@ -30,7 +30,9 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/db)
             api/Transaction.h api/TransactionBook.cpp api/TransactionBook.h api/Database.cpp api/Database.h)
 #target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+add_subdirectory(lib/mongoose-cpp)
 add_subdirectory(test)
+include_directories(lib/mongoose-cpp)
 
 FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
 find_package (SQLite3 REQUIRED)
@@ -42,7 +44,7 @@ endif (SQLITE3_FOUND)
 target_link_libraries(${PROJECT_NAME}
         ${Boost_FILESYSTEM_LIBRARY}
         ${Boost_SYSTEM_LIBRARY})
-
+target_link_libraries(${PROJECT_NAME} mongoose)
 
 
 #endif()
