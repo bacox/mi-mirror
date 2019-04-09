@@ -15,6 +15,7 @@ private:
     int reservationDate;
     std::string receiverAccountReference;
     std::string senderAccountReference;
+    std::string senderAccountName;
     double balanceBeforeTransaction;
     double mutationValue;
     int processDate;
@@ -41,9 +42,17 @@ public:
     bool isIsAnnotated() const;
 
 public:
-    Transaction(int index, int reservationDate, const std::string &receiverAccountReference,
-                const std::string &senderAccountReference, double mutationBeforeTransaction, double mutationValue,
-                int processDate, const std::string &description, const std::string &transactionCode);
+    Transaction(
+            int index,
+            int reservationDate,
+            const std::string &receiverAccountReference,
+            const std::string &senderAccountReference,
+            double mutationBeforeTransaction,
+            double mutationValue,
+            int processDate,
+            const std::string &description,
+            const std::string &transactionCode
+            );
 
     friend std::ostream &operator<<(std::ostream &os, const Transaction &transaction1);
 

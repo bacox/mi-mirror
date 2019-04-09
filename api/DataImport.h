@@ -6,10 +6,12 @@
 #define MONEY_INSIGHT_DATAIMPORT_H
 
 
+#include <sstream>
+
 class DataImport {
 public:
-    void fromCSVFile();
-    void fromStringBuffer();
+    std::string fromCSVFile(std::string filename);
+    void fromCSVStringBuffer(std::string);
 };
 
 
