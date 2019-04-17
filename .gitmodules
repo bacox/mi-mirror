@@ -1,0 +1,3 @@
+[submodule "lib/mongoose-cpp"]
+	path = lib/mongoose-cpp
+	url = git@github.com:Gregwar/mongoose-cpp.git
