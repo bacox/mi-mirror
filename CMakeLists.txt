@@ -33,7 +33,15 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/db)
     add_executable(${PROJECT_NAME}
             main.cpp
             api/Transaction.cpp
-            api/Transaction.h api/TransactionBook.cpp api/TransactionBook.h api/Database.cpp api/Database.h api/ApiHandler.cpp api/ApiHandler.h)
+            api/Transaction.h 
+            api/TransactionBook.cpp 
+            api/TransactionBook.h 
+            api/Database.cpp 
+            api/Database.h 
+            api/DataImport.cpp 
+            api/DataImport.h 
+            api/ApiHandler.cpp 
+            api/ApiHandler.h)
 #target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 add_subdirectory(lib/mongoose-cpp)
