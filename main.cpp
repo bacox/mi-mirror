@@ -7,7 +7,12 @@
 #include "api/TransactionBook.h"
 #include "api/Database.h"
 #include "api/DataImport.h"
+#include "api/ApiHandler.h"
+
+#include <mongoose/Server.h>
+#include <mongoose/WebController.h>
 #include <sqlite3.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
@@ -39,5 +44,19 @@ int main(int argc, char *argv[])
     DataImport di;
     std::string contents = di.fromCSVFile("../testdata/asn.csv");
     di.fromCSVStringBuffer(contents);
+    std::cout << tb << std::endl;
+
+
+    std::cout << "Starting webserver on port 8080" << std::endl;
+    ApiHandler myController;
+    Mongoose::Server server(8080);
+    server.registerController(&myController);
+    server.setOption("enable_directory_listing", "true");
+
+    server.start();
+
+    while (1) {
+        usleep(10);
+    }
     return 0;
 }
