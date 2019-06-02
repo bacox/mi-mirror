@@ -53,10 +53,12 @@ int main(int argc, char *argv[])
     ApiHandler myController;
     Mongoose::Server server(8080);
     server.registerController(&myController);
-    server.setOption("enable_directory_listing", "true");
+    server.setOption("document_root", "./www");
+    server.setOption("enable_directory_listing", "yes");
 
     server.start();
     std::cout << "Running" << std::endl;
+    myController.dumpRoutes();
     while (1) {
         usleep(10);
     }
