@@ -72,16 +72,16 @@ add_subdirectory(test)
 
 add_executable(${PROJECT_NAME}
         main.cpp
-        api/Transaction.cpp
-        api/Transaction.h
-        api/TransactionBook.cpp
-        api/TransactionBook.h
-        api/Database.cpp
-        api/Database.h
-        api/DataImport.cpp
-        api/DataImport.h
-        api/ApiHandler.cpp
-        api/ApiHandler.h)
+        src/models/Transaction.cpp
+        src/models/Transaction.h
+        src/models/TransactionBook.cpp
+        src/models/TransactionBook.h
+        src/api/Database.cpp
+        src/api/Database.h
+        src/api/DataImport.cpp
+        src/api/DataImport.h
+        src/api/ApiHandler.cpp
+        src/api/ApiHandler.h)
 
 FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
 find_package (SQLite3 REQUIRED)

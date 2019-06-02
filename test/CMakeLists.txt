@@ -25,7 +25,7 @@ MESSAGE(STATUS " CMAKE MODULE PATH: ${CMAKE_MODULE_PATH}")
 #if (test)
 
 
-file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/../api/*)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/../src/**/*)
 MESSAGE(STATUS "Files: ${SRC_FILES}")
 add_executable(${PROJECT_NAME} RunAllTests.cpp ${SRC_FILES} TestTransactionBook.cpp TestTransaction.cpp TestDatabase.cpp)
 #else()

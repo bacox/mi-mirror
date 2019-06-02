@@ -3,11 +3,11 @@
 //
 
 #include <iostream>
-#include "api/Transaction.h"
-#include "api/TransactionBook.h"
-#include "api/Database.h"
-#include "api/DataImport.h"
-#include "api/ApiHandler.h"
+#include "src/models/Transaction.h"
+#include "src/models/TransactionBook.h"
+#include "src/api/Database.h"
+#include "src/api/DataImport.h"
+#include "src/api/ApiHandler.h"
 
 #include <mongoose/Server.h>
 #include <mongoose/WebController.h>

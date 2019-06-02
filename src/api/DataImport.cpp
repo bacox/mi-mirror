@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "DataImport.h"
-#include "Transaction.h"
+#include "../models/Transaction.h"
 #include <boost/algorithm/string.hpp>
 #include <vector>
 
@@ -38,7 +38,7 @@ void DataImport::fromCSVStringBuffer(std::string stream) {
         int processingDate = 0;
         std::string description = parts[17];
         std::string transactionCode = parts[14];
-        Transaction t(
+        Models::Transaction t(
                 index,
                 reservationDate,
                 receiver,

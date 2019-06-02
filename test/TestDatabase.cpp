@@ -2,7 +2,7 @@
 // Created by bart on 7-4-19.
 //
 
-#include "../api/Database.h"
+#include "../src/api/Database.h"
 #include <boost/filesystem.hpp>
 #include <gtest/gtest.h>
 

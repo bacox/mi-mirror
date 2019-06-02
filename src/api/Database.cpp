@@ -39,7 +39,7 @@ void Database::closeDataBase() {
     }
 }
 
-bool Database::insertTransaction(Transaction t) {
+bool Database::insertTransaction(Models::Transaction t) {
 
     sqlite3_stmt *stmt;
     const char *pzTest;
@@ -88,11 +88,11 @@ bool Database::insertTransaction(Transaction t) {
     }
 }
 
-bool Database::updateTransaction(Transaction t) {
+bool Database::updateTransaction(Models::Transaction t) {
     return false;
 }
 
-bool Database::deleteTransaction(Transaction t) {
+bool Database::deleteTransaction(Models::Transaction t) {
     return false;
 }
 

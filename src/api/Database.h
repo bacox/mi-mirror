@@ -8,7 +8,7 @@
 
 #include <sqlite3.h>
 #include <string>
-#include "Transaction.h"
+#include "../models/Transaction.h"
 
 
 class Database {
@@ -29,9 +29,9 @@ public:
     bool isConnected();
     void closeDataBase();
 
-    bool insertTransaction(Transaction t);
-    bool updateTransaction(Transaction t);
-    bool deleteTransaction(Transaction t);
+    bool insertTransaction(Models::Transaction t);
+    bool updateTransaction(Models::Transaction t);
+    bool deleteTransaction(Models::Transaction t);
 
     bool rowExists(std::string tableName, int id);
 
