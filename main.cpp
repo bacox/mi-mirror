@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     DataImport di;
     std::string contents = di.fromCSVFile("../testdata/asn.csv");
     di.fromCSVStringBuffer(contents);
-    std::cout << tb << std::endl;
+//    std::cout << tb << std::endl;
 
 
     std::cout << "Starting webserver on port 8080" << std::endl;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     server.setOption("enable_directory_listing", "true");
 
     server.start();
-
+    std::cout << "Running" << std::endl;
     while (1) {
         usleep(10);
     }

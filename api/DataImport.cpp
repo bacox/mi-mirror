@@ -7,6 +7,7 @@
 #include "DataImport.h"
 #include "Transaction.h"
 #include <boost/algorithm/string.hpp>
+#include <vector>
 
 void DataImport::fromCSVStringBuffer(std::string stream) {
     std::vector<std::string> lines;

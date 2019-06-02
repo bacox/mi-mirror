@@ -11,11 +11,11 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 set(CMAKE_CXX_FLAGS "-g -Wall")
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/../cmake")
 MESSAGE(STATUS " CMAKE MODULE PATH: ${CMAKE_MODULE_PATH}")
+#MESSAGE(STATUS " GTEST_LIB: ${GTEST_INCLUDE_DIRS}")
 
 # Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
-
+#find_package(GTest REQUIRED)
+#include_directories(${GTEST_INCLUDE_DIRS})
 
 
 ################################
@@ -42,6 +42,8 @@ if (SQLITE3_FOUND)
 endif (SQLITE3_FOUND)
 
 target_link_libraries(${PROJECT_NAME}
+        gtest_main
+        mongoose
         ${GTEST_LIBRARIES}
         ${Boost_FILESYSTEM_LIBRARY}
         ${Boost_SYSTEM_LIBRARY}
