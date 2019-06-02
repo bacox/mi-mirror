@@ -2,8 +2,8 @@
 // Created by bart on 6-4-19.
 //
 
-#include "../src/models/Transaction.h"
 #include <gtest/gtest.h>
+#include <models/Transaction.h>
 
 TEST(Transaction, getIndex) {
     int index = 0;

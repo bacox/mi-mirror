@@ -66,22 +66,33 @@ add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
 
 #target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 add_subdirectory(lib/mongoose-cpp)
+
+file(GLOB HDR_API ${PROJECT_SOURCE_DIR}/api/*)
+file(GLOB HDR_MODELS ${PROJECT_SOURCE_DIR}/models/*)
+
 include_directories(lib/mongoose-cpp)
+include_directories(.)
 add_subdirectory(test)
+add_subdirectory(api)
+add_subdirectory(models)
 
 add_executable(${PROJECT_NAME}
         main.cpp
-        src/models/Transaction.cpp
-        src/models/Transaction.h
-        src/models/TransactionBook.cpp
-        src/models/TransactionBook.h
-        src/api/Database.cpp
-        src/api/Database.h
-        src/api/DataImport.cpp
-        src/api/DataImport.h
-        src/api/ApiHandler.cpp
-        src/api/ApiHandler.h)
+        ${HDR_API}
+        ${HDR_MODELS}
+#        models/Transaction.cpp
+#        models/Transaction.h
+#        models/TransactionBook.cpp
+#        models/TransactionBook.h
+#        api/Database.cpp
+#        api/Database.h
+#        api/DataImport.cpp
+#        api/DataImport.h
+#        api/ApiHandler.cpp
+#        api/ApiHandler.h
+        )
 
 FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
 find_package (SQLite3 REQUIRED)

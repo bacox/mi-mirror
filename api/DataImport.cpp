@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "DataImport.h"
-#include "../models/Transaction.h"
+#include "models/Transaction.h"
 #include <boost/algorithm/string.hpp>
 #include <vector>
 

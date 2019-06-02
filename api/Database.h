@@ -8,7 +8,7 @@
 
 #include <sqlite3.h>
 #include <string>
-#include "../models/Transaction.h"
+#include "models/Transaction.h"
 
 
 class Database {

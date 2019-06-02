@@ -2,9 +2,9 @@
 // Created by bart on 7-4-19.
 //
 
-#include "../src/api/Database.h"
 #include <boost/filesystem.hpp>
 #include <gtest/gtest.h>
+#include <api/Database.h>
 
 namespace {
 

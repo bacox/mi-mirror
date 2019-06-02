@@ -2,8 +2,8 @@
 // Created by bart on 6-4-19.
 //
 
-#include "../src/models/TransactionBook.h"
 #include <gtest/gtest.h>
+#include <models/TransactionBook.h>
 
 TEST(TransactionBook, AddTransaction) {
 

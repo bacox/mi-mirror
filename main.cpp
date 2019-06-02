@@ -3,16 +3,18 @@
 //
 
 #include <iostream>
-#include "src/models/Transaction.h"
-#include "src/models/TransactionBook.h"
-#include "src/api/Database.h"
-#include "src/api/DataImport.h"
-#include "src/api/ApiHandler.h"
+//#include "src/api/Database.h"
+//#include "src/api/DataImport.h"
+//#include "src/api/ApiHandler.h"
+//#include "src/models/TransactionBook.h"
+
 
 #include <mongoose/Server.h>
 #include <mongoose/WebController.h>
 #include <sqlite3.h>
 #include <unistd.h>
+#include <api/DataImport.h>
+#include <api/ApiHandler.h>
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +23,7 @@ int main(int argc, char *argv[])
 //    Transaction t(0, 1, "bart", "COX2", 0, 0, 0, "Test transaction" ,"ACC");
 //    Transaction t2(1, 1, "bart", "COX_XOC", 0, 0, 0, "Test transaction" ,"ACC");
 //
-//    TransactionBook tb;
+//    Models::TransactionBook tb;
 //
 //    tb.addTransaction(t);
 //    tb.addTransaction(t2);
