@@ -75,8 +75,8 @@ file(GLOB HDR_MODELS ${PROJECT_SOURCE_DIR}/models/*)
 include_directories(lib/mongoose-cpp)
 include_directories(.)
 add_subdirectory(test)
-add_subdirectory(api)
-add_subdirectory(models)
+#add_subdirectory(api)
+#add_subdirectory(models)
 
 add_executable(${PROJECT_NAME}
         main.cpp
